@@ -1,0 +1,22 @@
+---
+standalonePage: true
+---
+
+{% extends 'base.njk' %}
+{% import 'components/archive-list.njk' as archive %}
+
+{%- block main -%}
+<section class='content-block'>
+
+<div class='article-content'>
+   {% block content -%}{{content | safe}}{%- endblock content %}
+</div>
+
+{%-
+   set items = collections.live
+      | excludingStandalonePages
+      | archiveByYears(order)
+-%}
+{{ archive.list(items) }}
+</section>
+{%- endblock main -%}

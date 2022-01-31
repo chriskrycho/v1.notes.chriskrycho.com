@@ -1,0 +1,86 @@
+html {
+   background: var(--root-bg);
+}
+
+body {
+   padding: 0;
+   background-color: var(--root-bg);
+}
+
+:root {
+   --main-padding: #{ms(-8)};
+}
+
+main {
+   --padding: var(--main-padding);
+   margin: var(--padding);
+   width: calc(100% - 2 * var(--padding));
+   transition: 0.7s margin ease-out, 0.7s max-width ease-out;
+}
+
+@media screen {
+   @media (min-width: $resize) {
+      :root {
+         --main-padding: #{ms(-1)};
+      }
+   }
+
+   @media (min-width: $reflow) {
+      main {
+         min-height: calc(100vh - 2 * var(--padding));
+      }
+
+      @media (min-height: 600px) {
+         :root {
+            --main-padding: #{ms(-1)};
+         }
+
+         main {
+            margin: {
+               top: var(--padding);
+               left: var(--padding);
+               bottom: var(--padding);
+            }
+            width: 100%;
+            max-width: calc(75vw - var(--padding));
+         }
+
+         nav {
+            width: 100%;
+            max-width: 25vw;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            transition: 0.7s right ease-out;
+         }
+
+         .hide-side-nav {
+            main {
+               --padding: 0.25em;
+               max-width: calc(100vw - 0.5em - 2px);
+            }
+
+            nav {
+               right: -25vw;
+               transition: 0.7s right ease-out;
+            }
+         }
+      }
+   }
+
+   @media (min-height: 600px) {
+      @media (min-width: $break-4) {
+         :root {
+            --main-padding: #{ms(1)};
+         }
+      }
+
+      @media (min-width: $break-5) {
+         :root {
+            --main-padding: #{ms(3)};
+         }
+      }
+   }
+}
