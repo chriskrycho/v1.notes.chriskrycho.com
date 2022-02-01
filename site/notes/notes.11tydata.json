@@ -1,4 +1,4 @@
 {
    "layout": "note.njk",
-   "permalink": "/{{ page.date | localeDate('yyyy-MM-dd-HHmm') }}/"
+   "permalink": "/{{ page.date | localeDate('yyyy') }}/{{ page.date | localeDate('MM') }}/{{ page.date | localeDate('dd-HHmm') }}"
 }
