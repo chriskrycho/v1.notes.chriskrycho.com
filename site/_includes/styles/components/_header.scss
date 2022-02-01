@@ -11,14 +11,14 @@
 .site-title {
    flex: 1 1 auto;
    align-self: center;
-   margin-bottom: .42505rem; // ms(-6) in rem
+   margin-bottom: 0.42505rem; // ms(-6) in rem
 
    font: {
-      family: var(--sans-display);
+      family: var(--serif);
       weight: 400;
-      size: calc(var(--sans-adjust) * #{ms(5)});
+      size: ms(5);
+      style: italic;
    }
-   letter-spacing: normal;
    text-shadow: 0 0 2px var(--bg);
 
    line-height: 1;
@@ -39,7 +39,7 @@
          content: '';
          position: absolute;
          z-index: -1;
-         top: 87%;
+         top: 100%;
          background-color: var(--bar-color);
          height: calc(var(--bar-height) - 2px);
          width: var(--bar-width);
@@ -113,10 +113,6 @@
          a {
             --bar-height: 3px;
          }
-      }
-
-      .site-title {
-         letter-spacing: 1pt;
       }
    }
 
