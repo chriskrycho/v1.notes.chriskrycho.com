@@ -22,7 +22,7 @@
       width: 100%;
       margin: 0 auto;
       display: grid;
-      grid-template: '. year .' auto / minmax(7rem, 1fr) minmax(min-content, 32rem) minmax(
+      grid-template: '. year .' auto / minmax(7rem, 1fr) minmax(min-content, 35rem) minmax(
             7rem,
             1fr
          );
@@ -62,7 +62,7 @@
       }
       list-style-type: none;
       display: grid;
-      grid-template: 'title entries .' auto / 1fr minmax(min-content, 36rem) 1fr;
+      grid-template: 'title entries .' auto / 1fr minmax(min-content, 39rem) 1fr;
       gap: 0 1rem;
       justify-content: stretch;
       justify-items: stretch;
@@ -208,7 +208,7 @@
 
       .month {
          gap: 0.5rem;
-         grid-template-columns: 1fr minmax(min-content, 32rem) 1fr;
+         grid-template-columns: 1fr minmax(min-content, 35rem) 1fr;
       }
 
       .month-title {
