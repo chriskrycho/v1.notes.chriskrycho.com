@@ -106,3 +106,6 @@ typings/
 # Build outputs
 *.pdf
 *.epub
+
+# Sublime extra
+*.sublime-workspace
