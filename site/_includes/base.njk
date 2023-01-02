@@ -55,15 +55,32 @@
 
       {% block extra_links %}{% endblock extra_links %}
 
-      <link rel='preload' as='script' type='application/javascript' href='/assets/js/main.js'>
-
       <meta name="author" content="Chris Krycho"/>
 
       {% block meta %}
          {{ social.meta(page, config) }}
       {% endblock meta%}
+
+      <script type="module">
+         window.addEventListener('load', setHeight);
+
+         let observer = new ResizeObserver(setHeight);
+         observer.observe(document.querySelector('.site-archive-notice'));
+
+         function setHeight() {
+            let { height } = document.querySelector('.site-archive-notice').getBoundingClientRect();
+            document.querySelector('main').style.setProperty('margin-top', `calc(${height}px + var(--padding))`);
+         }
+      </script>
    </head>
    <body>
+      <div class='site-archive-notice'>
+         <p>
+            <span class='archived'>Archived</span> – this site ended its life on 2022.01.02.
+            For the <em>next</em> microblogging site from Chris Krycho, see
+            <a href="https://v1.microblog.chriskrycho.com">v1.microblog.chriskrycho.com</a>.
+         </p>
+      </div>
       <main>
          <header class='site-header'>
             <h1 class='site-title'>
@@ -95,9 +112,5 @@
             {%- endfor -%}
          </ul>
       </nav>
-
-      {{ Preferences() }}
-      <script type='module' src='/assets/js/main.js'></script>
-      <script nomodule src='/assets/js/main.old.js'></script>
    </body>
 </html>

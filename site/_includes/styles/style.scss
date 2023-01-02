@@ -73,3 +73,37 @@ html {
 @import './layout';
 @import './typography';
 @import './utils';
+
+.site-archive-notice {
+   background: var(--blue-2);
+   color: var(--gray-5);
+   padding: 0.7rem 1rem;
+   font: 1.2rem / 1.2 var(--sans);
+   position: fixed;
+   top: 0;
+   right: 0;
+   left: 0;
+   z-index: 100;
+
+   .archived {
+      font-style: italic;
+   }
+
+   a:any-link {
+      color: var(--gray-6);
+   }
+
+   a:any-link:hover {
+      color: var(--blue-6);
+   }
+}
+
+@media screen and (min-width: 960px) {
+   .site-archive-notice {
+      display: flex;
+      align-content: center;
+      align-items: center;
+      font-size: 1.4rem;
+      line-height: 1.4;
+   }
+}

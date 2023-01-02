@@ -3,7 +3,7 @@
    position: fixed;
 
    // +1px to account for main border
-   top: calc(var(--main-padding) + 1px);
+   top: calc(var(--archived) + var(--main-padding) + 1px);
    right: calc(var(--main-padding) + 1px);
 
    background: var(--bg);
