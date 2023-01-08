@@ -2,6 +2,16 @@
    "$schema": "https://openapi.vercel.sh/vercel.json",
    "cleanUrls": true,
    "redirects": [
+      {
+         "source": "feed.json",
+         "destination": "https://v1.microblog.chriskrycho.com/feed.json",
+         "permanent": false
+      },
+      {
+         "source": "feed.xml",
+         "destination": "https://v1.microblog.chriskrycho.com/feed.xml",
+         "permanent": false
+      },
       { "source": "0634", "destination": "/2020-04-29-0634", "permanent": true },
       { "source": "0640", "destination": "/2020-07-17-0640", "permanent": true },
       { "source": "0712", "destination": "/2020-07-18-0712", "permanent": true },
